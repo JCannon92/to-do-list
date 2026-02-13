@@ -3,7 +3,7 @@ import './styles/core.css';
 import ToDo from './scripts/app/todo.js';
 import {
     Project,
-    projectLibrary,
+    ProjectLibrary,
 } from './scripts/app/project.js'
 
 //Intialisation setup with various sample ToDos
@@ -26,8 +26,11 @@ const dailyTasks = new Project(
     'A project full of daily tasks'
 );
 
+const projectLibrary = new ProjectLibrary();
 projectLibrary.addProject(dailyTasks);
 
 dailyTasks.addToDo(waterPlants);
 dailyTasks.addToDo(vacuumHouse);
 
+//For debugging purposes
+window.projectLibrary = projectLibrary;

@@ -35,32 +35,26 @@ class Project {
 
 }
 
-//There can only be on projectLibrary so it's an IIFE.
-const projectLibrary = (() => {
-    const library = {}; 
-    
-    const getLibrary = () => {
-        return library
+//Class for a container for all projects
+class ProjectLibrary {
+    constructor() {
+        this.projectList = {};
     }
 
-    const getProject = (projectId) => {
-        return library[projectId];
+    getProject(projectId) {
+        return this.projectList[projectId];
     }
 
-    const addProject = (project) => {
-        library[project.id] = project;
+    addProject(project) {
+        this.projectList[project.id] = project;
     }
 
-
-    return {
-        getLibrary,
-        getProject,
-        addProject,
-    }
-
-})();
+    removeProject(project) {
+        delete this.projectList[project.id];
+    } 
+}
 
 export {
     Project,
-    projectLibrary
+    ProjectLibrary
 };
