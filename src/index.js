@@ -1,8 +1,12 @@
 import './styles/core.css';
 
-import ToDo from './scripts/app/create-todo.js';
-import Project from './scripts/app/create-project.js'
+import ToDo from './scripts/app/todo.js';
+import {
+    Project,
+    projectLibrary,
+} from './scripts/app/project.js'
 
+//Intialisation setup with various sample ToDos
 const waterPlants = new ToDo(
     'Water Plants',
     'I need to water the plants in the garden beds.',
@@ -17,11 +21,13 @@ const vacuumHouse = new ToDo(
     'High',
 )
 
-const newProject = new Project(
+const dailyTasks = new Project(
     'Daily Tasks',
     'A project full of daily tasks'
 );
 
-newProject.addToDo(waterPlants);
-newProject.addToDo(vacuumHouse);
-newProject.printToDoItems();
+projectLibrary.addProject(dailyTasks);
+
+dailyTasks.addToDo(waterPlants);
+dailyTasks.addToDo(vacuumHouse);
+

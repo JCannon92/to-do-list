@@ -12,6 +12,7 @@ class ToDoItem {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.status = 'New';
     }
 
     printToDo () {
@@ -19,6 +20,7 @@ class ToDoItem {
         console.log('Description: ' + this.description);
         console.log('Due Date: ' + this.dueDate);
         console.log('Priority: ' + this.priority);
+        console.log('Status: ' + this.status);
     }
 
 }

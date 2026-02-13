@@ -1,5 +1,4 @@
 //Class for a project
-
 class Project {
     constructor(
         name,
@@ -36,4 +35,32 @@ class Project {
 
 }
 
-export default Project;
+//There can only be on projectLibrary so it's an IIFE.
+const projectLibrary = (() => {
+    const library = {}; 
+    
+    const getLibrary = () => {
+        return library
+    }
+
+    const getProject = (projectId) => {
+        return library[projectId];
+    }
+
+    const addProject = (project) => {
+        library[project.id] = project;
+    }
+
+
+    return {
+        getLibrary,
+        getProject,
+        addProject,
+    }
+
+})();
+
+export {
+    Project,
+    projectLibrary
+};
