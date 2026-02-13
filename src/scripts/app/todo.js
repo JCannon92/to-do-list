@@ -23,6 +23,9 @@ class ToDoItem {
         console.log('Status: ' + this.status);
     }
 
+    set status (value) {
+        this.status = value;
+    }
 }
 
 export default ToDoItem;

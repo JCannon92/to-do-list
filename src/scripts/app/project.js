@@ -35,13 +35,13 @@ class Project {
 
 }
 
-//Class for a container for all projects
+//Class for a container for all
 class ProjectLibrary {
     constructor() {
         this.projectList = {};
     }
 
-    getProject(projectId) {
+    getProjectFromId(projectId) {
         return this.projectList[projectId];
     }
 
