@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    margin: 0;
+}
+
+nav {
+    background-color: chartreuse;
+    padding: 10px;
+}
+
+div.main {
+    flex: 1;
+    display: flex;
+}
+
+div.projects {
+    background-color: blueviolet;
+    flex: 1;
+    max-width: 20%;
+}
+
+div.to-dos {
+    background-color: brown;
+    flex: 1;
+}
