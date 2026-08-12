@@ -68,6 +68,15 @@ function initialiseProjects() {
         'I need to install a lightbar on the Camry.'
     );
 
+    const buyLightbar = new ToDo(
+        'Buy a New Lightbar',
+        'Purchase from car shop.',
+        '22/08/2026',
+        'High',
+    );
+
+    installLightbar.addToDo(buyLightbar);
+
     projectLibrary.addProject(dailyTasks);
     projectLibrary.addProject(fixFences);
     projectLibrary.addProject(installLightbar);

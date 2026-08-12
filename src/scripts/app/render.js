@@ -1,3 +1,4 @@
+
 //Return a DOM element of project.
 function createProjectElement(project) {
     const projectElement = window.document.createElement("div");
@@ -12,6 +13,9 @@ function createProjectElement(project) {
 
     projectElement.appendChild(projectTitle);
     projectElement.appendChild(projectDescription);
+
+    //Add an event listener that will render the tasks when the project element is selected
+    projectElement.addEventListener("click", (event) => renderProjectToDos(project));
 
     return projectElement;
     
