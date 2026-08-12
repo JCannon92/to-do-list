@@ -4,7 +4,8 @@ import ToDo from './scripts/app/todo.js';
 import {
     Project,
     ProjectLibrary,
-} from './scripts/app/project.js'
+} from './scripts/app/project.js';
+import Renderer from './scripts/app/render.js';
 
 //Intialisation setup with various sample ToDos
 const waterPlants = new ToDo(
