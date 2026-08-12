@@ -38,20 +38,24 @@ class Project {
 //Class for a container for all projects
 class ProjectLibrary {
     constructor() {
-        this.projectList = {};
+        this.projects = {};
     }
 
     getProject(projectId) {
-        return this.projectList[projectId];
+        return this.projects[projectId];
     }
 
     addProject(project) {
-        this.projectList[project.id] = project;
+        this.projects[project.id] = project;
     }
 
     removeProject(project) {
-        delete this.projectList[project.id];
-    } 
+        delete this.projects[project.id];
+    }
+
+    getProjectArray() {
+        return Object.values(this.projects);
+    }
 }
 
 export {

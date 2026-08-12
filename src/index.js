@@ -1,13 +1,24 @@
 import './styles/core.css';
+import './styles/project.css'
 
 import ToDo from './scripts/app/todo.js';
+
 import {
     Project,
     ProjectLibrary,
 } from './scripts/app/project.js';
-import Renderer from './scripts/app/render.js';
 
-//Intialisation setup with various sample ToDos
+import {
+    renderProjectLibrary,
+} from './scripts/app/render.js';
+
+//Intialisation setup with various sample projects
+const projectLibrary = new ProjectLibrary();
+
+const dailyTasks = new Project(
+    'Daily Tasks',
+    'A project full of daily tasks'
+);
 const waterPlants = new ToDo(
     'Water Plants',
     'I need to water the plants in the garden beds.',
@@ -29,17 +40,19 @@ const feedCat = new ToDo(
     'High',
 );
 
-const dailyTasks = new Project(
-    'Daily Tasks',
-    'A project full of daily tasks'
-);
-
-const projectLibrary = new ProjectLibrary();
-projectLibrary.addProject(dailyTasks);
-
 dailyTasks.addToDo(waterPlants);
 dailyTasks.addToDo(vacuumHouse);
 dailyTasks.addToDo(feedCat);
+
+const fixFences = new Project(
+    'Fix Fences',
+    'Fences need fixing around southern boundary.'
+)
+
+projectLibrary.addProject(dailyTasks);
+projectLibrary.addProject(fixFences);
+
+renderProjectLibrary(projectLibrary);
 
 //For debugging purposes
 window.projectLibrary = projectLibrary;

@@ -1,0 +1,13 @@
+div.project {
+    flex: 1;
+    padding: 15px;
+    border: 5px solid blue;
+    background-color: aliceblue;
+
+    display: flex;
+    flex-direction: column;
+}
+
+div.project h1.project-title {
+    margin: auto;
+}
