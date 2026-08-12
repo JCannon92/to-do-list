@@ -1,0 +1,30 @@
+div.to-dos {
+    display: flex;
+}
+
+div.to-do {
+    margin: 20px;
+    flex: 1;
+    background-color: cadetblue;
+    max-height: 50%;
+    max-width: 25%;
+
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 2fr / 1fr 1fr 1fr;
+}
+
+div.to-do h1 {
+    grid-column: 1 / 4;
+    text-align: center;
+    font-size: 22px;
+}
+
+div.to-do p {
+    grid-column: 2 / 4;
+    margin: 3px 8px;
+}
+
+div.to-do p.to-do-label {
+    grid-column: 1 / 2;
+}
+
