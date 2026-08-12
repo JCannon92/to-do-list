@@ -1,5 +1,4 @@
 //Class for a todo
-
 class ToDoItem {
     constructor (
         title,

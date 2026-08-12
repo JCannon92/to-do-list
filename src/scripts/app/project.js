@@ -7,7 +7,7 @@ class Project {
         this.id = crypto.randomUUID();
         this.name = name;
         this.description = description;
-        this.toDoList = {};
+        this.toDos = {};
     }
 
     printProjectDetails() {
@@ -16,21 +16,21 @@ class Project {
     }
 
     printToDoItems() {
-        Object.entries(this.toDoList).forEach(([id, toDo]) => {
+        Object.entries(this.toDos).forEach(([id, toDo]) => {
             toDo.printToDo();
         })
     }
 
-    addToDo(
-        ToDoItem,
-    ) {
-        this.toDoList[ToDoItem.id] = ToDoItem;
+    addToDo(ToDoItem) {
+        this.toDos[ToDoItem.id] = ToDoItem;
     }
 
-    removeToDo(
-        ToDoItem,
-    ) {
-        delete this.toDoList[ToDoItem.id];
+    removeToDo(ToDoItem) {
+        delete this.toDos[ToDoItem.id];
+    }
+
+    getToDosArray() {
+        return Object.values(this.toDos);
     }
 
 }

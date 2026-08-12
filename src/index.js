@@ -10,6 +10,7 @@ import {
 
 import {
     renderProjectLibrary,
+    renderProjectToDos,
 } from './scripts/app/render.js';
 
 //Intialisation setup with various sample projects
@@ -17,7 +18,7 @@ const projectLibrary = new ProjectLibrary();
 
 const dailyTasks = new Project(
     'Daily Tasks',
-    'A project full of daily tasks'
+    'A project full of daily tasks.'
 );
 const waterPlants = new ToDo(
     'Water Plants',
@@ -47,12 +48,20 @@ dailyTasks.addToDo(feedCat);
 const fixFences = new Project(
     'Fix Fences',
     'Fences need fixing around southern boundary.'
-)
+);
+
+const installLightbar = new Project(
+    'Install Lightbar',
+    'I need to install a lightbar on the Camry.'
+);
 
 projectLibrary.addProject(dailyTasks);
 projectLibrary.addProject(fixFences);
+projectLibrary.addProject(installLightbar);
 
 renderProjectLibrary(projectLibrary);
+renderProjectToDos(dailyTasks);
+
 
 //For debugging purposes
 window.projectLibrary = projectLibrary;
